@@ -1,0 +1,14 @@
+syntax = "proto3";
+package stock;
+option go_package="stockpb";
+
+message StockRequest{
+}
+
+message StockResponse{
+  int64 price = 1;
+}
+
+service Stock{
+  rpc StockTracker(StockRequest) returns (stream StockResponse) {};
+}
